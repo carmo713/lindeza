@@ -137,8 +137,8 @@
             padding: 0 2rem;
         }
         
-        /* Llama section */
-        .llama-section {
+        /* Poetry section */
+        .poetry-section {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -148,29 +148,6 @@
             box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
             max-width: 800px;
             width: 100%;
-        }
-        
-        .llama-container {
-            position: relative;
-            width: 250px;
-            height: 250px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .llama {
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%234a90e2' d='M464 144c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm-336 64c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32zm206-64c6.6 0 12-5.4 12-12s-5.4-12-12-12h-22c-6.6 0-12 5.4-12 12s5.4 12 12 12h22zm-46 0c6.6 0 12-5.4 12-12s-5.4-12-12-12-12 5.4-12 12 5.4 12 12 12zm-94 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm272-32c0 17.7 14.3 32 32 32s32-14.3 32-32-14.3-32-32-32-32 14.3-32 32zm-368 96c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm64-144c0 17.7 14.3 32 32 32s32-14.3 32-32-14.3-32-32-32-32 14.3-32 32zm112 108c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm272 40c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32zm-400-40c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80zm384-80c0 44.2-35.8 80-80 80s-80-35.8-80-80 35.8-80 80-80 80 35.8 80 80zm-256 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm-224 32c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16s-16 7.2-16 16v16c0 8.8 7.2 16 16 16zm384 0c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16s-16 7.2-16 16v16c0 8.8 7.2 16 16 16zm-192 0c61.9 0 112-50.1 112-112s-50.1-112-112-112-112 50.1-112 112 50.1 112 112 112z'/%3E%3C/svg%3E") no-repeat center center;
-            animation: bounce 2s ease-in-out infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
         }
         
         .love-message {
@@ -212,27 +189,37 @@
         }
         
         /* Auth links */
-        .auth-links {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+        .auth-container {
             display: flex;
-            gap: 1rem;
-            z-index: 10;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1.5rem;
         }
         
         .auth-link {
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             background-color: var(--color-primary);
             color: var(--color-white);
             text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
+            display: flex;
+            align-items: center;
         }
         
         .auth-link:hover {
             background-color: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
+        }
+        
+        .auth-link svg {
+            margin-right: 0.5rem;
+            width: 18px;
+            height: 18px;
         }
         
         /* Responsive */
@@ -269,23 +256,19 @@
                 gap: 2rem;
             }
             
-            .llama-container {
-                width: 200px;
-                height: 200px;
-            }
-            
             .love-message {
                 font-size: 1.5rem;
+            }
+            
+            .auth-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="auth-links">
-        <a href="/login" class="auth-link">Login</a>
-        <a href="/register" class="auth-link">Register</a>
-    </div>
-    
     <div class="container">
         <div class="side-photos">
             <div class="photo-item">
@@ -316,12 +299,7 @@
                 <p class="subtitle">Cada día te quiero más y más</p>
             </header>
             
-            <section class="llama-section">
-                <div class="llama-container">
-                    <div class="llama"></div>
-                    
-                </div>
-                
+            <section class="poetry-section">
                 <h2 class="love-message">Soneto de Fidelidade</h2>
                 <p class="love-description">
                     "De tudo ao meu amor serei atento<br>
@@ -342,6 +320,26 @@
                     Que não seja imortal, posto que é chama<br>
                     Mas que seja infinito enquanto dure."
                 </p>
+                
+                <div class="auth-container">
+                    <a href="/login" class="auth-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                            <polyline points="10 17 15 12 10 7"></polyline>
+                            <line x1="15" y1="12" x2="3" y2="12"></line>
+                        </svg>
+                        Login
+                    </a>
+                    <a href="/register" class="auth-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                        Register
+                    </a>
+                </div>
             </section>
             
             <footer>
