@@ -272,7 +272,7 @@
     <div class="container">
         <div class="side-photos">
             <div class="photo-item">
-                <img src="{{ asset('img/1.jpeg') }}" alt="Foto juntos">
+                <img src="{{ asset('img/14.jpeg') }}" alt="Foto juntos">
             </div>
             <div class="photo-item">
                 <img src="{{ asset('img/2.jpeg') }}" alt="Foto de amor">
